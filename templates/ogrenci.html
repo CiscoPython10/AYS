@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block grup10elz %}
+
+<h5>Öğrencinin Okula Geldiği Günler -{{ad}}  
+
+<div class="float-right"><a href="/yoklama" class="btn btn-secondary">Geri</a></div>
+ </h5>
+<hr>
+<div class="container">
+  {% if ogrencix == [] %}
+        <div class="alert alert-warning" role="alert">
+                Herhangi bir öğrenci okulda  bulunmuyor...
+        </div>
+        {% else %}
+       <div class="card " style="width: 50%">
+  <div class="card-header">
+   Tarih
+  </div>
+  <ul class="list-group list-group-flush">
+   {% for ogrenci in ogrencix %}
+    <li class="list-group-item">{{ogrenci.come_date.strftime("%d/%m/%Y")}}</li>
+    
+  {% endfor %}
+                  
+  </ul>
+</div>
+       
+   
+ 
+
+        {% endif %}
+        </div>
+{% endblock  %}

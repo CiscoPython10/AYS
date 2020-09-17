@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block grup10elz %}
+<div class="jumbotron text-center "><h4>AKILLI YOKLAMA SİSTEMİ-AYS</h4>
+      {% if session['logged_in'] %}
+{{session.username}} Hoşgeldin
+{% else %}
+{% endif %}</div>
+<h5>Proje İçeriği</h5>
+<hr>
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="{{ url_for('static', filename='img/1.png') }}" >
+    <div class="card-body">
+      <h5 class="card-title">OpenCV</h5>
+      <hr>
+      <p class="card-text">Yüz Tanımlama iş ve işlemlerinin yapıldığı modülü</p>
+    </div>
+    <div class="card-footer text-right">
+      <a href="/icerik1" class="btn btn-secondary">Devamı</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{{ url_for('static', filename='img/2.png') }}" >
+    <div class="card-body">
+      <h5 class="card-title">Flask</h5>
+      <hr>
+      <p class="card-text">Yüz tanımlama işleminin web tanında yapılmasın sağlayan modülü</p>
+    </div>
+     <div class="card-footer text-right">
+      <a href="/icerik2" class="btn btn-secondary">Devamı</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{{ url_for('static', filename='img/3.jpg') }}" >
+    <div class="card-body">
+      <h5 class="card-title">IoT</h5>
+      <hr>
+      <p class="card-text">Arduino ile kart okuyucu (RC522) modülü</p>
+    </div>
+     <div class="card-footer text-right">
+      <a href="/icerik3" class="btn btn-secondary">Devamı</a>
+    </div>
+  </div>
+</div>
+<hr>
+
+{% endblock %}
+
+

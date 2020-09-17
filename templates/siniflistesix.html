@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block grup10elz %}
+
+ <div style = "margin-top: 100px;" class = "container" >
+       
+
+        {% if ogrencilist == []  %}
+           <h5>{{sinifim}} 'da Bulunan Öğrencilerin Listesi  
+
+<div class="float-right"><a href="/siniflistesi" class="btn btn-secondary">Geri</a></div>
+ </h5>
+        <hr>
+        <div class="alert alert-warning" role="alert">
+                Bu Sınıfta Herhangi Bir Öğrenci Bulunmuyor...
+        </div>
+        
+        {% else  %}
+        <h5>{{sinifim}} 'da Bulunan Öğrencilerin Listesi  
+
+<div class="float-right"><a href="/siniflistesi" class="btn btn-secondary">Geri</a></div>
+ </h5>
+
+        <hr>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Öğrenci Adı Soyadı</th>
+                    <th scope="col">Öğrenci Numarası</th>
+                    
+                    <th scope="col">Öğrenci KartNo</th>
+                      <th scope="col">Öğrenci Sınıf</th>
+                      <th scope="col">Öğrenci Detay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for todo in ogrencilist %}
+                  <tr>
+                        <th scope="row">{{todo.id}}</th>
+                        <td>{{todo.ad_soyad}}</td>
+                      
+                        <td  > {{todo.numara}}</td>
+
+                        {% if todo.kartno == None %}
+                        <td >Kart Numarası Girilmemiş</td>
+                        {% else %}
+                        <td >{{todo.kartno}}</td>
+                        {% endif %}
+                        
+                        
+                        <td>{{todo.sinif}}</td>
+                    <td><a href="/detay/{{todo.numara}}" class="btn btn-warning">Kişi Detay</a></td>
+                        
+                        
+  
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+       
+
+        {% endif %}
+        
+        
+    </div>
+{% endblock  %}

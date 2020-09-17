@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block grup10elz %}
+
+ <div style = "margin-top: 100px;" class = "container" >
+       
+
+        {% if sinifx == []  %}
+         <h4>Okuldaki Bulunan Sınıflar</h4>
+        <hr>
+        <div class="alert alert-warning" role="alert">
+                Herhangi bir sınıf bulunmuyor...
+        </div>
+        
+        {% else  %}
+         <h4>Okuldaki Bulunan Sınıflar</h4>
+        <hr>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Sınıf Adı</th>
+                    <th scope="col">Sınıf Durumu</th>
+                    
+                    <th scope="col">Sınıf Öğrenci Listesi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for todo in sinifx %}
+                  <tr>
+                        <th scope="row">{{todo.id}}</th>
+                        <td>{{todo.sinifx}}</td>
+                        {% if todo.complete == False %}
+                        <td  > Sınıf Pasif</td>
+                        {% else %}
+                        <td >Sınıf Aktif</td>
+                        {% endif %}
+                        {% if todo.complete == False %}
+                        <td  > Sınıf Pasif Olduğundan Dolayı Liste İşlemleri Yapılamaz</td>
+                        {% else %}
+                        <td><a href="/listelex/{{todo.sinifx}}" class ="btn btn-outline-success">Liste</a></td>
+                        {% endif %}
+                        
+                        
+  
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+       
+
+        {% endif %}
+        
+        
+    </div>
+{% endblock  %}

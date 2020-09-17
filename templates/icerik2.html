@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block grup10elz %}
+
+<div class="card text-justify">
+  <div class="card-header">
+   <h5 class="card-title"> Flask Nedir?</h5>
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text">Flask bir python frameworküdür. Bilindiği üzere python hızlıca birşeyler yapmak belli sonuçları zamandan kazanarak ortaya çıkarmak için hayat kurtaran bir dildir. Web servislerinde de hızlı sonuç elde etmek için pythonun flask frameworkünden yararlanlabirilir. Flask hem çabuk öğrenilebilen hemde bencmarklarına bakıldığında performansı gayet yüksek bir frameworktür.</p>
+    <h6 class="card-title">Nedir Bu Web Framework?</h6>
+    <hr>
+    <p class="card-text">Web framework ölçeklenebilir,güvenilir ve sürdürülebilir web uygulamaları oluştururken hayat kurtaran paket veya modüller içeren bir kütüphane yada koleksiyondur. Türkçe karşılığı çerçevedir. Frameworkler ortak işlemlerde kodu tekrar kullanmayı kolaylaştırır. Kod kalabalığını önler.<br>
+Flask Artıları<br>
+· Son derece esnek<br>
+· Öğrenilmesi ve kullanması kolay<br>
+· Yönlendirme URL’leri kolay<br>
+Ve tabi her şeyden öte Python’nun yorumlanabilir bir dil olması yani derlenmeye ihtiyaç duymaması işlemlerin süresini kısaltan en büyük etken.</p>
+<h6 class="card-title">Flask Nasıl Kurulur?</h6>
+<hr>
+<p class="card-text">FLask’ı kurmak için ,aşağıdaki kodu komut satırından çalıştırarak pip ediyoruz.<br>
+Pip install Flask</p>
+    <h6 class="card-title">İlk Flask Uygulamamızı Olusturalım</h6>
+<hr>
+<p class="card-text">İlk önce bir kod editörü seçmelisiniz. Daha önceden kullandığınız bir editör olabilir. Benim önerim Visual Studio Code.
+Ardından aşağıda yazdığım kod ile flask kütüphanesini python projemize dahil ediyoruz.<br>
+from flask import Flask<br>
+Daha sonra Flask sınıfından bir app nesnesi oluşturarak projemizde flask kütüphanesinin özelliklerini kullanacağız.<br>
+app=Flask(__name__)<br>
+Şimdi nesnemiz üzerinden ilk web sayfamızı oluşturalım. Bu sayfamız Https://localhost/ dizininde aktif olacaktır.<br>
+@app.route(“/”)<br>
+def index():<br>
+return “Merhaba Flask!”<br>
+if “__name__”==”__main__”:<br>
+app.run(debug=True)<br>
+Evet yazdığımız bu kod ile ilk sayfamızı “/”dizinde oluşturduk. @app.route() fonksiyonu ile sayfalarımızı oluşturuyoruz. Sayfalarımıza vermek istediğimiz adres dizileriniz ise(“/”) şeklinde ifade edebiliyoruz. Def index() fonksiyonu ile return edeceğimiz değerleri sayfamızda görmemizi sağlıyoruz. Burada html sayfası da return edebiliriz. O bize kalmış. Ben örnek olsun diye “Hello Flask!” değerini gönderiyoruz. Ardından yazdığımız if koşulunda projemizi aktifleştirerek çalıştırıyoruz.
+Şimdi yazdığımız python dosyasını kaydedip çalıştıralım. Tarayızıcınızda localhost:5000/ adresine gidin. Ve karşınızda Merhaba Flask!</p>
+  </div>
+  <div class="card-footer text-muted text-center">
+    Grup 10 Proje Sayfası
+  </div>
+</div>
+{% endblock  %}

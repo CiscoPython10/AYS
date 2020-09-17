@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block grup10elz %}
+
+<div class="card text-justify">
+  <div class="card-header">
+   <h5 class="card-title"> Arduino ile RFID Uygulaması</h5>
+  </div>
+  <div class="card-body">
+    <img class="card-img-top" src="{{ url_for('static', filename='img/4.jpg') }}" >
+    <p class="card-text"><h5 class="card-title"> İhtiyacımız Olan Malzemeler:</h6>
+    <hr>
+1x Arduino UNO<br>
+1x RFID Kart Okuyucu (Tavsiyem RC522)<br>
+1x Buzzer<br>
+1x Breadboard<br>
+2x Led (Kırmızı – Yeşil)<br>
+2x 339 Ohm Direnç<br>
+Jumper Kablolar<br>
+İsteğe bağlı olarak da Servo, LCD ve I2C Modülü.<br>
+
+Pin Bağlantıları:<br>
+RFID Kart:<br>
+SDA: 10<br>
+SCK: 13<br>
+MOSI: 11<br>
+MISO: 12<br>
+GND: GND<br>
+RST: 9<br>
+3.3V: 3.3V<br>
+
+Not: RC522 modülü SPI haberleşme protokolünü kullandığı için ve arduinoda bu SPI pinleri arduino üzerinde MOSI – 11 MISO – 12 SCK – 13 olarak belirlendiği için bu pinleri farklı pinlerle değiştiremezsiniz fakat isterseniz SDA ve RST pinlerini değiştirebilirsiniz.</p>
+    
+  </div>
+  <div class="card-footer text-muted text-center">
+    Grup 10 Proje Sayfası
+  </div>
+</div>
+{% endblock  %}
